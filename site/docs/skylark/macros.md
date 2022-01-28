@@ -20,8 +20,9 @@ and Bazel sees only the concrete set of instantiated rules.
 
 The typical use case for a macro is when you want to reuse a rule.
 
-For example, genrule in a `BUILD` file generates a file using
-`//:generator` with a `some_arg` argument hardcoded in the command:
+In the following example, [`genrule()`](../be/general.html#genrule) in a `BUILD` file
+generates a file using a `bash` command. Here the command comes from a fictitious
+`//:generator` target and takes one argument `some_arg`:
 
 ```python
 genrule(
